@@ -28,7 +28,6 @@ export async function onRequestPost(context) {
         html: `
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Company:</strong> ${company}</p>
           <p><strong>Details:</strong><br/>${details.replace(/\n/g, '<br/>')}</p>
         `
       })
