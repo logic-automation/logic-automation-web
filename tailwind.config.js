@@ -49,6 +49,7 @@ export default {
         "on-secondary": "#ffffff",
         "inverse-surface": "#1e333c",
         "primary-fixed-dim": "#b4c5ff",
+        "primary": "#004bca",
         "primary-container": "#0061ff"
       },
       borderRadius: {
