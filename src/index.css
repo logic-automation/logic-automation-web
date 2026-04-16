@@ -6,6 +6,22 @@
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   }
+  .tonal-carving-low {
+    background-color: #e6f6ff;
+  }
+  .glass-nav {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(24px);
+  }
+  .logic-line {
+    border-left: 4px solid #004bca;
+  }
+  .diffusion-shadow {
+    box-shadow: 0 20px 40px rgba(7, 30, 39, 0.06);
+  }
+  .gradient-cta {
+    background: linear-gradient(45deg, #004bca, #0061ff);
+  }
 }
 
 .logic-line { position: relative; }
