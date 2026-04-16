@@ -61,7 +61,7 @@ function LandingPage() {
 
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative min-h-[921px] flex items-center px-8 max-w-7xl mx-auto overflow-hidden">
+        <section className="relative min-h-[600px] lg:min-h-[800px] flex items-center px-8 max-w-7xl mx-auto overflow-hidden py-24 lg:py-0">
           <div className="grid lg:grid-cols-12 gap-12 items-center w-full">
             <div className="lg:col-span-7 space-y-8">
               <div className="inline-block px-3 py-1 bg-surface-container-highest text-primary text-xs font-bold tracking-[0.05em] uppercase rounded-full">
