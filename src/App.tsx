@@ -371,7 +371,7 @@ function PrivacyPolicyPage() {
           <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable.</p>
 
           <h2 className="text-2xl font-bold text-on-surface mt-8 mb-4">4. Contact Us</h2>
-          <p>If you have questions or comments about this Privacy Policy, please contact us at contact@logicautomationllc.com.</p>
+          <p>If you have questions or comments about this Privacy Policy, please <span className="text-primary hover:underline cursor-pointer" onClick={() => navigate('/')}>use the contact form on our home page</span>.</p>
         </div>
       </main>
     </div>
@@ -401,7 +401,7 @@ function TermsOfServicePage() {
           <p>In no event shall Logic Automation, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the website.</p>
 
           <h2 className="text-2xl font-bold text-on-surface mt-8 mb-4">4. Contact Us</h2>
-          <p>If you have any questions about these Terms, please contact us at contact@logicautomationllc.com.</p>
+          <p>If you have any questions about these Terms, please <span className="text-primary hover:underline cursor-pointer" onClick={() => navigate('/')}>use the contact form on our home page</span>.</p>
         </div>
       </main>
     </div>
