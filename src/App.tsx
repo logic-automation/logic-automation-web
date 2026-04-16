@@ -260,6 +260,10 @@ function LandingPage() {
                     <input className="w-full bg-white border border-outline-variant/30 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-on-surface" placeholder="john@enterprise.com" type="email" name="email" value={formData.email} onChange={handleChange} required />
                   </div>
                   <div className="md:col-span-2 space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Company Name</label>
+                    <input className="w-full bg-white border border-outline-variant/30 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-on-surface" placeholder="Enterprise Corp" type="text" name="company" value={formData.company} onChange={handleChange} />
+                  </div>
+                  <div className="md:col-span-2 space-y-2">
                     <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant">How can we help?</label>
                     <textarea className="w-full bg-white border border-outline-variant/30 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-on-surface" placeholder="Describe your current workflow challenge..." rows={4} name="details" value={formData.details} onChange={handleChange} required></textarea>
                   </div>
