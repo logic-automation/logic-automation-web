@@ -297,12 +297,18 @@ function LandingPage() {
 }
 
 function SuccessPage() {
+  const navigate = useNavigate();
   return (
     <div className="bg-background text-on-background font-body min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed">
       <header className="fixed top-0 w-full z-50 bg-[#f3faff]/80 backdrop-blur-xl">
         <nav className="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
           <div className="flex items-center gap-8">
-            <span className="text-xl font-bold tracking-tighter text-[#071e27] font-headline">Logic Automation</span>
+            <span 
+              className="text-xl font-bold tracking-tighter text-[#071e27] font-headline cursor-pointer" 
+              onClick={() => navigate('/')}
+            >
+              Logic Automation
+            </span>
           </div>
         </nav>
         <div className="bg-[#e6f6ff] h-[1px]"></div>
@@ -313,7 +319,7 @@ function SuccessPage() {
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-tertiary font-label text-xs uppercase tracking-[0.1em] font-semibold">
                 <span className="w-8 h-[1px] bg-tertiary"></span>
-                Transaction Verified
+                Request Confirmed
               </div>
               <h1 className="text-5xl md:text-7xl font-extrabold font-headline tracking-tighter text-on-surface leading-[1.1]">
                 Consultation <br />
@@ -321,8 +327,16 @@ function SuccessPage() {
               </h1>
             </div>
             <p className="text-lg text-on-surface-variant max-w-lg leading-relaxed">
-              Our engineering team has received your details. We'll reach out within 24 hours to schedule your technical audit. Your precision-focused transformation begins now.
+              Our engineering team has received your details. We'll reach out to schedule your technical audit. Your precision-focused transformation begins now.
             </p>
+            <div className="pt-4">
+              <button 
+                onClick={() => navigate('/')}
+                className="bg-primary text-on-primary px-8 py-4 rounded-xl font-headline font-bold text-lg hover:opacity-90 transition-opacity"
+              >
+                Return to Main Site
+              </button>
+            </div>
           </div>
         </div>
       </main>
