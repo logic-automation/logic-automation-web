@@ -14,18 +14,18 @@ function LandingPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      
+
       if (!response.ok) {
         throw new Error('Failed to submit form');
       }
-      
+
       const result = await response.json();
       if (result.success) {
         navigate('/success');
@@ -45,7 +45,7 @@ function LandingPage() {
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none">
         <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-          <div className="text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline cursor-pointer" onClick={() => { window.scrollTo(0,0); navigate('/'); }}>Logic Automation</div>
+          <div className="text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline cursor-pointer" onClick={() => { window.scrollTo(0, 0); navigate('/'); }}>Logic Automation</div>
           <div className="hidden md:flex gap-8 items-center">
             <a className="font-headline font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300 ease-in-out" href="#services">Services</a>
             <a className="font-headline font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300 ease-in-out" href="#about">About</a>
@@ -105,7 +105,7 @@ function LandingPage() {
                   <span className="material-symbols-outlined" data-weight="fill">speed</span>
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-on-surface">99.9% Efficiency</div>
+                  <div className="text-sm font-bold text-on-surface">Increase Efficiency</div>
                   <div className="text-xs text-on-surface-variant">Architecture-led performance</div>
                 </div>
               </div>
@@ -205,7 +205,7 @@ function LandingPage() {
                   <img className="w-full h-full object-cover" data-alt="Diverse team of software engineers working in a minimalist high-tech office with large windows and bright natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuuRssbJkbE00sGmNTVXC7feYjQUZSSGIg5CysXevMpS5jftLBHJsSbAwNGxTNlkj5YseKzadKx5GAucuigxTVDaZZmg9KMX9l8RFEa79E_-7Z-VZVLPyi0jjY2YriN7SkrrP-a9A66Dtaisrru3tIqCDHD1Izw8yWqBT7ldnmDyzKroZ3xbDDlFL9SkmttVSVgdXFEdSAa_pl7eAAMxfwXg0v8Jn8wgAhkqp7L0uHq1s2v6dNPu1YfDWQamiwxTzVZSchwbdo8g" />
                 </div>
                 <div className="bg-tertiary p-8 rounded-2xl text-on-tertiary">
-                  <div className="text-4xl font-bold mb-1">12+</div>
+                  <div className="text-4xl font-bold mb-1">{new Date().getFullYear() - 2012}+</div>
                   <div className="text-sm font-medium opacity-80">Years Expertise</div>
                 </div>
               </div>
@@ -288,7 +288,7 @@ function LandingPage() {
               <span className="material-symbols-outlined text-[16px]">location_on</span>
               <span>Riverside, CA</span>
             </div>
-            <p className="font-body text-sm text-slate-500 dark:text-slate-400">© 2026 Logic Automation. Architectural precision in workflow design.</p>
+            <p className="font-body text-sm text-slate-500 dark:text-slate-400">© {new Date().getFullYear()} Logic Automation. Architectural precision in workflow design.</p>
           </div>
           <div className="flex gap-8">
             <a className="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-opacity duration-200 text-sm" href="#">Privacy Policy</a>
@@ -307,8 +307,8 @@ function SuccessPage() {
       <header className="fixed top-0 w-full z-50 bg-[#f3faff]/80 backdrop-blur-xl">
         <nav className="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
           <div className="flex items-center gap-8">
-            <span 
-              className="text-xl font-bold tracking-tighter text-[#071e27] font-headline cursor-pointer" 
+            <span
+              className="text-xl font-bold tracking-tighter text-[#071e27] font-headline cursor-pointer"
               onClick={() => navigate('/')}
             >
               Logic Automation
@@ -334,7 +334,7 @@ function SuccessPage() {
               Our engineering team has received your details. We'll reach out to schedule your technical audit. Your precision-focused transformation begins now.
             </p>
             <div className="pt-4">
-              <button 
+              <button
                 onClick={() => navigate('/')}
                 className="bg-primary text-on-primary px-8 py-4 rounded-xl font-headline font-bold text-lg hover:opacity-90 transition-opacity"
               >
