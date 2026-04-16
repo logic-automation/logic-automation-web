@@ -44,13 +44,13 @@ function LandingPage() {
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none">
         <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-          <div className="text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline">Logic Automation</div>
+          <div className="text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline cursor-pointer" onClick={() => { window.scrollTo(0,0); navigate('/'); }}>Logic Automation</div>
           <div className="hidden md:flex gap-8 items-center">
             <a className="font-headline font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300 ease-in-out" href="#services">Services</a>
             <a className="font-headline font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300 ease-in-out" href="#about">About</a>
             <a className="font-headline font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300 ease-in-out" href="#workflow">Workflows</a>
             <a className="font-headline font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300 ease-in-out" href="#contact">Contact</a>
-            <button className="bg-primary text-on-primary px-6 py-2 rounded-xl font-headline font-semibold hover:opacity-90 transition-opacity">Get Started</button>
+            <a className="bg-primary text-on-primary px-6 py-2 rounded-xl font-headline font-semibold hover:opacity-90 transition-opacity" href="#contact">Get Started</a>
           </div>
           {/* Mobile Menu Icon (Placeholder for functionality) */}
           <div className="md:hidden">
@@ -74,12 +74,12 @@ function LandingPage() {
                 We design custom software and intelligent workflows that scale with your ambitions. Precision engineering for the modern enterprise.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="gradient-cta text-on-primary px-8 py-4 rounded-xl font-headline font-bold text-lg diffusion-shadow hover:scale-[1.02] transition-transform">
+                <a className="gradient-cta text-on-primary px-8 py-4 rounded-xl font-headline font-bold text-lg diffusion-shadow hover:scale-[1.02] transition-transform inline-block" href="#services">
                   View Solutions
-                </button>
-                <button className="bg-surface-container-highest text-on-surface px-8 py-4 rounded-xl font-headline font-bold text-lg hover:bg-surface-variant transition-colors">
+                </a>
+                <a className="bg-surface-container-highest text-on-surface px-8 py-4 rounded-xl font-headline font-bold text-lg hover:bg-surface-variant transition-colors" href="#workflow">
                   Technical Specs
-                </button>
+                </a>
               </div>
             </div>
             <div className="lg:col-span-5 relative hidden lg:block">
@@ -245,15 +245,15 @@ function LandingPage() {
                 <form className="grid md:grid-cols-2 gap-8" onSubmit={handleSubmit}>
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Name</label>
-                    <input className="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-0 focus:bg-surface-container-highest focus:border-b-2 focus:border-primary transition-all" placeholder="John Doe" type="text" name="name" value={formData.name} onChange={handleChange} required />
+                    <input className="w-full bg-white border border-outline-variant/30 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-on-surface" placeholder="John Doe" type="text" name="name" value={formData.name} onChange={handleChange} required />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Email</label>
-                    <input className="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-0 focus:bg-surface-container-highest focus:border-b-2 focus:border-primary transition-all" placeholder="john@enterprise.com" type="email" name="email" value={formData.email} onChange={handleChange} required />
+                    <input className="w-full bg-white border border-outline-variant/30 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-on-surface" placeholder="john@enterprise.com" type="email" name="email" value={formData.email} onChange={handleChange} required />
                   </div>
                   <div className="md:col-span-2 space-y-2">
                     <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant">How can we help?</label>
-                    <textarea className="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-0 focus:bg-surface-container-highest focus:border-b-2 focus:border-primary transition-all" placeholder="Describe your current workflow challenge..." rows={4} name="details" value={formData.details} onChange={handleChange} required></textarea>
+                    <textarea className="w-full bg-white border border-outline-variant/30 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-on-surface" placeholder="Describe your current workflow challenge..." rows={4} name="details" value={formData.details} onChange={handleChange} required></textarea>
                   </div>
                   <div className="md:col-span-2 pt-4">
                     <button className="w-full md:w-auto gradient-cta text-on-primary px-12 py-4 rounded-xl font-headline font-bold text-lg diffusion-shadow hover:opacity-90 transition-opacity disabled:opacity-50" type="submit" disabled={loading}>
