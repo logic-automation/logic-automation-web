@@ -247,13 +247,7 @@ function LandingPage() {
             <div className="bg-surface-container-lowest rounded-3xl overflow-hidden flex flex-col lg:flex-row diffusion-shadow">
               <div className="lg:w-1/3 gradient-cta p-12 text-on-primary">
                 <h4 className="font-headline text-3xl font-bold mb-6">Ready to Architect Your Future?</h4>
-                <p className="opacity-80 mb-12">Connect with our engineering team for a technical audit of your current processes.</p>
-                <div className="space-y-8">
-                  <div className="flex items-center gap-4">
-                    <span className="material-symbols-outlined">location_on</span>
-                    <span>Riverside, CA</span>
-                  </div>
-                </div>
+                <p className="opacity-80">Connect with our engineering team for a technical audit of your current processes.</p>
               </div>
               <div className="lg:w-2/3 p-12 lg:p-16">
                 <form className="grid md:grid-cols-2 gap-8" onSubmit={handleSubmit}>
@@ -286,6 +280,10 @@ function LandingPage() {
         <div className="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-7xl mx-auto">
           <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
             <div className="font-headline font-bold text-slate-900 dark:text-slate-100 mb-4">Logic Automation</div>
+            <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-4">
+              <span className="material-symbols-outlined text-[16px]">location_on</span>
+              <span>Riverside, CA</span>
+            </div>
             <p className="font-body text-sm text-slate-500 dark:text-slate-400">© 2026 Logic Automation. Architectural precision in workflow design.</p>
           </div>
           <div className="flex gap-8">
