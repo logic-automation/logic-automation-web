@@ -4,6 +4,7 @@ import { useState } from 'react';
 function LandingPage() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', company: '', details: '' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -52,11 +53,24 @@ function LandingPage() {
             <a className="font-headline font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300 ease-in-out" href="#contact">Contact</a>
             <a className="bg-primary text-on-primary px-6 py-2 rounded-xl font-headline font-semibold hover:opacity-90 transition-opacity" href="#contact">Get Started</a>
           </div>
-          {/* Mobile Menu Icon (Placeholder for functionality) */}
-          <div className="md:hidden">
-            <span className="material-symbols-outlined text-on-surface">menu</span>
+          {/* Mobile Menu Icon */}
+          <div className="md:hidden cursor-pointer" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <span className="material-symbols-outlined text-on-surface">{isMobileMenuOpen ? 'close' : 'menu'}</span>
           </div>
         </div>
+
+        {/* Mobile Dropdown Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white dark:bg-slate-950 border-t border-outline-variant/20 absolute top-full w-full left-0 flex flex-col px-8 py-4 shadow-lg">
+            <a className="font-headline font-semibold tracking-tight text-slate-600 dark:text-slate-400 py-3 border-b border-outline-variant/10" href="#services" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
+            <a className="font-headline font-semibold tracking-tight text-slate-600 dark:text-slate-400 py-3 border-b border-outline-variant/10" href="#about" onClick={() => setIsMobileMenuOpen(false)}>About</a>
+            <a className="font-headline font-semibold tracking-tight text-slate-600 dark:text-slate-400 py-3 border-b border-outline-variant/10" href="#workflow" onClick={() => setIsMobileMenuOpen(false)}>Workflows</a>
+            <a className="font-headline font-semibold tracking-tight text-slate-600 dark:text-slate-400 py-3 border-b border-outline-variant/10" href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+            <div className="pt-4">
+              <a className="bg-primary text-on-primary px-6 py-3 rounded-xl font-headline font-semibold text-center block w-full" href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Get Started</a>
+            </div>
+          </div>
+        )}
       </nav>
 
       <main className="pt-20">
