@@ -291,8 +291,8 @@ function LandingPage() {
             <p className="font-body text-sm text-slate-500 dark:text-slate-400">© {new Date().getFullYear()} Logic Automation. Architectural precision in workflow design.</p>
           </div>
           <div className="flex gap-8">
-            <a className="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-opacity duration-200 text-sm" href="#">Privacy Policy</a>
-            <a className="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-opacity duration-200 text-sm" href="#">Terms of Service</a>
+            <span className="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-opacity duration-200 text-sm cursor-pointer" onClick={() => { window.scrollTo(0,0); navigate('/privacy'); }}>Privacy Policy</span>
+            <span className="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-opacity duration-200 text-sm cursor-pointer" onClick={() => { window.scrollTo(0,0); navigate('/terms'); }}>Terms of Service</span>
           </div>
         </div>
       </footer>
@@ -348,12 +348,74 @@ function SuccessPage() {
   );
 }
 
+function PrivacyPolicyPage() {
+  const navigate = useNavigate();
+  return (
+    <div className="bg-surface font-body text-on-surface min-h-screen">
+      <nav className="w-full bg-white/80 dark:bg-slate-950/80 shadow-sm px-8 py-4 flex justify-between items-center">
+        <span className="text-xl font-bold font-headline cursor-pointer text-slate-900 dark:text-slate-50" onClick={() => navigate('/')}>Logic Automation</span>
+      </nav>
+      <main className="max-w-4xl mx-auto px-8 py-16">
+        <h1 className="font-headline text-4xl font-bold mb-6">Privacy Policy</h1>
+        <p className="mb-4 text-sm text-on-surface-variant">Last Updated: {new Date().toLocaleDateString()}</p>
+        <div className="space-y-6 text-on-surface-variant">
+          <p>Logic Automation ("we", "our", or "us") respects your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website logicautomationllc.com.</p>
+          
+          <h2 className="text-2xl font-bold text-on-surface mt-8 mb-4">1. Information We Collect</h2>
+          <p>We may collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and services, or otherwise contact us. This includes your name, email address, company name, and any details provided in your communications.</p>
+
+          <h2 className="text-2xl font-bold text-on-surface mt-8 mb-4">2. How We Use Your Information</h2>
+          <p>We use the information we collect to communicate with you, process your requests, improve our website, and provide our services. We do not sell or share your personal information with third parties for their marketing purposes.</p>
+
+          <h2 className="text-2xl font-bold text-on-surface mt-8 mb-4">3. Data Security</h2>
+          <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable.</p>
+
+          <h2 className="text-2xl font-bold text-on-surface mt-8 mb-4">4. Contact Us</h2>
+          <p>If you have questions or comments about this Privacy Policy, please contact us at contact@logicautomationllc.com.</p>
+        </div>
+      </main>
+    </div>
+  );
+}
+
+function TermsOfServicePage() {
+  const navigate = useNavigate();
+  return (
+    <div className="bg-surface font-body text-on-surface min-h-screen">
+      <nav className="w-full bg-white/80 dark:bg-slate-950/80 shadow-sm px-8 py-4 flex justify-between items-center">
+        <span className="text-xl font-bold font-headline cursor-pointer text-slate-900 dark:text-slate-50" onClick={() => navigate('/')}>Logic Automation</span>
+      </nav>
+      <main className="max-w-4xl mx-auto px-8 py-16">
+        <h1 className="font-headline text-4xl font-bold mb-6">Terms of Service</h1>
+        <p className="mb-4 text-sm text-on-surface-variant">Last Updated: {new Date().toLocaleDateString()}</p>
+        <div className="space-y-6 text-on-surface-variant">
+          <p>Welcome to Logic Automation. These Terms of Service govern your use of our website located at logicautomationllc.com.</p>
+
+          <h2 className="text-2xl font-bold text-on-surface mt-8 mb-4">1. Acceptance of Terms</h2>
+          <p>By accessing or using our website, you agree to be bound by these Terms of Service. If you disagree with any part of the terms, then you may not access the website.</p>
+
+          <h2 className="text-2xl font-bold text-on-surface mt-8 mb-4">2. Intellectual Property</h2>
+          <p>The website and its original content, features, and functionality are and will remain the exclusive property of Logic Automation and its licensors. The website is protected by copyright, trademark, and other laws.</p>
+
+          <h2 className="text-2xl font-bold text-on-surface mt-8 mb-4">3. Limitation of Liability</h2>
+          <p>In no event shall Logic Automation, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the website.</p>
+
+          <h2 className="text-2xl font-bold text-on-surface mt-8 mb-4">4. Contact Us</h2>
+          <p>If you have any questions about these Terms, please contact us at contact@logicautomationllc.com.</p>
+        </div>
+      </main>
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/success" element={<SuccessPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms" element={<TermsOfServicePage />} />
       </Routes>
     </Router>
   );
